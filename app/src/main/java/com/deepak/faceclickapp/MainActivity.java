@@ -30,7 +30,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.graphics.ImageFormat.NV21;
-import static com.google.firebase.ml.vision.common.FirebaseVisionImageMetadata.ROTATION_0;
 
 public class MainActivity extends AppCompatActivity {
     private static final int MY_PERMISSIONS_REQUEST = 1337;
@@ -60,7 +59,10 @@ public class MainActivity extends AppCompatActivity {
         FirebaseVisionFaceDetectorOptions options =
                 new FirebaseVisionFaceDetectorOptions.Builder()
                         .setPerformanceMode(FirebaseVisionFaceDetectorOptions.FAST)
-                        .setContourMode(FirebaseVisionFaceDetectorOptions.ALL_CONTOURS)
+                        .setContourMode(FirebaseVisionFaceDetectorOptions.NO_CONTOURS)
+                        .setClassificationMode(FirebaseVisionFaceDetectorOptions.NO_CLASSIFICATIONS)
+                        .setLandmarkMode(FirebaseVisionFaceDetectorOptions.NO_LANDMARKS)
+                        .enableTracking()
                         .build();
         // [END set_detector_options]
 
@@ -95,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         .setFormat(NV21)
                         .setHeight(height)
                         .setWidth(width)
-                        .setRotation(ROTATION_0)
+                        .setRotation(degreesToFirebaseRotation(rotationDegrees))
                         .build());
 
                 detector.detectInImage(firebaseVisionImage).addOnSuccessListener(new OnSuccessListener<List<FirebaseVisionFace>>() {
@@ -193,6 +195,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    private int degreesToFirebaseRotation(int degrees) {
+        switch (Math.abs(degrees)) {
+            case 0:
+            case 360:
+                return FirebaseVisionImageMetadata.ROTATION_0;
+            case 90:
+                return FirebaseVisionImageMetadata.ROTATION_90;
+            case 180:
+                return FirebaseVisionImageMetadata.ROTATION_180;
+            case 270:
+                return FirebaseVisionImageMetadata.ROTATION_270;
+            default:
+                throw new IllegalArgumentException(
+                        "Rotation must be 0, 90, 180, or 270.");
+        }
+    }
 
 }
 
