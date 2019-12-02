@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "836410701962",
+    "firebase_url": "https://deepakdemoprojects.firebaseio.com",
+    "project_id": "deepakdemoprojects",
+    "storage_bucket": "deepakdemoprojects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836410701962:android:d8cff824c328d02e5c1573",
+        "android_client_info": {
+          "package_name": "com.deepak.faceclickapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836410701962-h2v8qpc571binspvgah431bni1r1i751.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.deepak.faceclickapp",
+            "certificate_hash": "1d83618b203f0a88b02480d0d1255add0ffa053c"
+          }
+        },
+        {
+          "client_id": "836410701962-f07ujn42vcppsc3blk4d58ku90cthjs3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYMw5y5p_HrP1mZAWZkKCwcImOiPDoEf0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836410701962-f07ujn42vcppsc3blk4d58ku90cthjs3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
