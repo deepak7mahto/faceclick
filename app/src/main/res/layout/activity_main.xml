@@ -16,19 +16,6 @@
         android:adjustViewBounds="true"
         android:keepScreenOn="true"
         app:autoFocus="true"
-        app:cameraAspectRatio="4:3"
-        app:enableZoom="true"
-        app:facing="front"
-        app:flash="off"
-        app:maximumPreviewWidth="1280"
-        app:maximumWidth="4000"
-        app:useHighResPicture="false" />
-
-    <Button
-        android:id="@+id/getpicture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:text="getPicture" />
+        app:facing="front" />
 
 </RelativeLayout>
